@@ -1,0 +1,15 @@
+.DS_Store
+.git/
+.gitignore
+.next/
+.vscode/
+.editorconfig
+.node-version
+out/
+build/
+node_modules/
+package*.json
+*.lock
+*.log*
+_templates/
+coverage/

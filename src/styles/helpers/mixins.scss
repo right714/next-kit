@@ -1,0 +1,35 @@
+@use "sass:meta";
+
+@mixin line-clamp($rows) {
+  @if meta.type-of($rows) != number {
+    @error Use number type for "$rows", value is "#{$rows}";
+  }
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin modifier($name) {
+  @if meta.type-of($name) != string {
+    @error Use string type for "$name", value is "#{$name}";
+  }
+
+  &.is_#{$name} {
+    @content;
+  }
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin transition($tfunc: ease, $duration: 300ms, $props...) {
+  transition-timing-function: $tfunc;
+  transition-duration: $duration;
+  transition-property: $props;
+}

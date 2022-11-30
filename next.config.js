@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  trailingSlash: true,
+  eslint: {
+    dirs: ["src"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

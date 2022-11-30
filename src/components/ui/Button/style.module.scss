@@ -1,0 +1,9 @@
+@use "@/styles/helper" as *;
+
+.button {
+  border: 1px solid gray;
+
+  @include mq(pc) {
+    font-size: 1.2em;
+  }
+}

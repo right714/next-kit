@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Kit
 
-## Getting Started
+## これはなに
 
-First, run the development server:
+Next.js のプロジェクトを始めるときに使うボイラープレート
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## ライブラリ
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [SWR](https://swr.vercel.app/ja)
+- [Jotai](https://jotai.org/)
+- [classnames](https://www.npmjs.com/package/classnames)
+  - CSS Modules を使用するため
+- [tailwindcss](https://tailwindcss.com/)
+  - [Cheatsheet](https://tailwindcomponents.com/cheatsheet/)
+- [Next-SEO](https://github.com/garmeeh/next-seo)
+- [Vitest](https://vitest.dev/)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### その他
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- [Prettier](https://prettier.io/)
+- [Stylelint](https://stylelint.io/)
+- [hygen](https://www.hygen.io/)
+  - ページ・コンポーネント雛形作成のため
+- [husky](https://typicode.github.io/husky/#/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## CSS に関して
 
-## Learn More
+CSS Modules + tailwindcss<br />
+CSS Modules を基本として、tailwindcss はサブ（ひとまずどちらも使えるように対応している状態）
 
-To learn more about Next.js, take a look at the following resources:
+### メディアクエリ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[参考](https://github.com/right714/base-static#sass-%E3%81%AE%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## npm script
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| コマンド | 内容 |
+| --- | --- |
+| `dev` | Next.js |
+| `build` | ビルド＋エクスポート |
+| `start` | サーバーを起動 |
+| `lint` | リント＋Typescriptチェック |
+| `test` | Vitest実行 |
+| `test:run` | No-watchでVitest |
+| `test:update` | テストファイルをアップデート |
+| `test:ui` | UI環境でVitest |
+| `prettier` | Prettier |
+| `stylelint` | Stylelint |
+| `new:page` | 新しいページをジェネレート |
+| `new:ui` | 新しいUIコンポーネントをジェネレート |
+| `new:feature` | 新しい機能コンポーネントをジェネレート |
+| `npm:outdated` | node packageのアップデートチェック |
+| `npm:update` | node packageのアップデート |

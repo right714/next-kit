@@ -1,0 +1,12 @@
+// Vitest Snapshot v1
+
+exports[`Button 1`] = `
+<div>
+  <button
+    class="_button_3bd438 text-red-500"
+    type="button"
+  >
+    ボタン
+  </button>
+</div>
+`;
