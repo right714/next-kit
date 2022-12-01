@@ -22,7 +22,7 @@
     "new:ui": "hygen generator ui-component",
     "new:feature": "hygen generator feature-component",
     "npm:outdated": "ncu",
-    "npm:update": "ncu -u"
+    "npm:update": "ncu -u && npm install"
   },
   "dependencies": {
     "@types/node": "18.11.9",
