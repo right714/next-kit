@@ -1,12 +1,10 @@
 ---
 to: src/pages/<%= path %>.tsx
 ---
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 <% if (hasMeta) { -%>
 import { NextSeo } from "next-seo";
 <% } -%>
-
-type PageProps = {};
 
 export default (() => {
   return (
@@ -15,4 +13,4 @@ export default (() => {
 <% } -%>
     </>
   );
-}) as NextPage<PageProps>;
+}) as NextPage<NextPageContext>;

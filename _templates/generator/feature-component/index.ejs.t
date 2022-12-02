@@ -1,11 +1,13 @@
 ---
 to: src/components/features/<%= name %>/index.tsx
 ---
-import { FC } from "react";
+import { FC, ComponentPropsWithoutRef } from "react";
 import styled from "./style.module.scss";
 
-type ComponentProps = {};
+type Props = ComponentPropsWithoutRef<"div">;
 
 export default (() => {
-  return ();
-}) as FC<ComponentProps>;
+  return (
+    <div>Feature Component</div>
+  );
+}) as FC<Props>;

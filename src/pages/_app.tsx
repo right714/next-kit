@@ -1,6 +1,7 @@
-import type { AppType, AppProps } from "next/app";
 import "@/styles/custom-props.scss";
 import "@/styles/global.scss";
+
+import type { AppProps, AppType } from "next/app";
 import { DefaultSeo } from "next-seo";
 
 export default (({ Component, pageProps }) => {

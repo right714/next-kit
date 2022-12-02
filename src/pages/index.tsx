@@ -1,8 +1,7 @@
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 import { NextSeo } from "next-seo";
-import Button from "@/ui/Button";
 
-type PageProps = {};
+import Button from "@/ui/Button";
 
 export default (() => {
   return (
@@ -12,4 +11,4 @@ export default (() => {
       <Button>ボタンです</Button>
     </>
   );
-}) as NextPage<PageProps>;
+}) as NextPage<NextPageContext>;

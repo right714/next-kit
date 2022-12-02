@@ -1,11 +1,13 @@
 ---
 to: src/components/ui/<%= name %>/index.tsx
 ---
-import { FC } from "react";
+import { FC, ComponentPropsWithoutRef } from "react";
 import styled from "./style.module.scss";
 
-type ComponentProps = {};
+type Props = ComponentPropsWithoutRef<"div">;
 
 export default (() => {
-  return ();
-}) as FC<ComponentProps>;
+  return (
+    <div>UI Component</div>
+  );
+}) as FC<Props>;
