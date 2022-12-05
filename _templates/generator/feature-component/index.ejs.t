@@ -1,7 +1,8 @@
 ---
-to: src/components/features/<%= name %>/index.tsx
+to: src/components/feature/<%= name %>/index.tsx
 ---
-import { FC, ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, FC } from "react";
+
 import styled from "./style.module.scss";
 
 type Props = ComponentPropsWithoutRef<"div">;

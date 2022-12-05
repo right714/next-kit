@@ -1,4 +1,5 @@
 const utils = require("../../utils");
+
 const { toUpperCaseFirstChar } = utils;
 
 module.exports = {
