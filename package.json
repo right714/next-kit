@@ -1,6 +1,6 @@
 {
-  "name": "kit-nextjs",
-  "version": "0.1.0",
+  "name": "next-kit",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "prepare": "husky install",
