@@ -27,9 +27,7 @@
       "@/types/*": ["types/*"],
       "@/utils/*": ["utils/*"]
     },
-    "types": [
-      "vitest/importMeta"
-    ],
+    "types": ["vitest/importMeta"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
