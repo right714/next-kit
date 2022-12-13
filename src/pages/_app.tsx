@@ -1,5 +1,5 @@
 import "@/styles/custom-props.scss";
-import "@/styles/global.scss";
+import "windi.css";
 
 import type { AppProps, AppType } from "next/app";
 import { DefaultSeo } from "next-seo";

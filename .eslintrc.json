@@ -4,11 +4,14 @@
   "plugins": ["@typescript-eslint", "simple-import-sort"],
   "rules": {
     "@next/next/no-img-element": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-var-requires": 0,
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
-    "import/no-duplicates": "error"
+    "import/no-duplicates": "error",
+    "react/display-name": 0
   },
   "root": true
 }

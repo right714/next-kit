@@ -22,10 +22,10 @@
     "format": "npm run prettier:fix && npm run stylelint:fix",
     "code-fix": "npm run lint:fix && npm run format",
     "new:page": "hygen generator page",
-    "new:ui": "hygen generator ui-component",
-    "new:feature": "hygen generator feature-component",
+    "new:component": "hygen generator component",
     "npm:outdated": "ncu",
-    "npm:update": "ncu -u && npm install"
+    "npm:update": "ncu -u && npm install",
+    "screenshot": "storycap --serverCmd \"start-storybook -p 9001\" http://localhost:9001"
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -44,7 +44,10 @@
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-links": "^6.5.14",
     "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-storysource": "^6.5.14",
     "@storybook/builder-vite": "^0.2.5",
+    "@storybook/builder-webpack5": "^6.5.14",
+    "@storybook/manager-webpack5": "^6.5.14",
     "@storybook/react": "^6.5.14",
     "@testing-library/react": "^13.4.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -55,6 +58,7 @@
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
     "classnames": "^2.3.2",
+    "css-loader": "^6.7.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
@@ -64,9 +68,10 @@
     "jsdom": "^20.0.3",
     "next-seo": "^5.14.1",
     "npm-check-updates": "^16.4.3",
-    "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "storycap": "^3.1.9",
     "stylelint": "^14.15.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-recess-order": "^3.0.0",
@@ -74,8 +79,8 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.6.0",
     "stylelint-order": "^5.0.0",
     "swr": "^1.3.0",
-    "tailwindcss": "^3.2.4",
-    "vitest": "^0.25.3"
+    "vitest": "^0.25.3",
+    "windicss-webpack-plugin": "^1.7.7"
   },
   "engines": {
     "node": "16.x"

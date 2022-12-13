@@ -26,12 +26,6 @@
     "plugin/declaration-block-no-ignored-properties": true,
     "scss/at-mixin-argumentless-call-parentheses": "always",
     "scss/at-mixin-pattern": "^([a-z]|[0-9]|-)+$",
-    "scss/at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": ["tailwind", "apply"]
-      }
-    ],
     "scss/dimension-no-non-numeric-values": true,
     "scss/dollar-variable-empty-line-before": null,
     "scss/dollar-variable-pattern": "^_?([a-z]|[0-9]|-)+$",
