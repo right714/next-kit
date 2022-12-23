@@ -3,17 +3,13 @@ import "windi.css";
 import { withScreenshot } from "storycap";
 
 export const decorators = [withScreenshot];
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
-    },
-  },
-  docs: {
-    source: {
-      type: "dynamic",
     },
   },
   viewport: {
@@ -77,20 +73,6 @@ export const parameters = {
     },
   },
   screenshot: {
-    fullPage: false,
-    viewports: {
-      mobile: {
-        width: 375,
-        height: 667,
-      },
-      tablet: {
-        width: 768,
-        height: 1024,
-      },
-      desktop: {
-        width: 1280,
-        height: 720,
-      },
-    },
+    skip: true,
   },
 };

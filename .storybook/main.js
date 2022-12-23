@@ -3,19 +3,7 @@ const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 
 module.exports = {
   stories: ["../src/components/**/*.stories.mdx", "../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        postcssLoaderOptions: {
-          implementation: require("postcss"),
-        },
-      },
-    },
-    "@storybook/addon-storysource",
-  ],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-postcss", "storycap"],
   framework: "@storybook/react",
   core: {
     builder: "webpack5",
@@ -43,17 +31,25 @@ module.exports = {
 
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@/styles": resolve(__dirname, "../src/styles"),
-      "@/pages": resolve(__dirname, "../src/pages"),
-      "@/components": resolve(__dirname, "../src/components"),
-      "@/layouts": resolve(__dirname, "../src/components/layouts"),
-      "@/features": resolve(__dirname, "../src/components/features"),
-      "@/ui": resolve(__dirname, "../src/components/ui"),
-      "@/hooks": resolve(__dirname, "../src/hooks"),
-      "@/stores": resolve(__dirname, "../src/stores"),
-      "@/types": resolve(__dirname, "../src/types"),
-      "@/utils": resolve(__dirname, "../src/utils"),
+      "@": resolve(__dirname, "../src"),
+      "@public": resolve(__dirname, "../public"),
     };
+
+    config.module.rules.push({
+      test: /\.inline.svg$/,
+      issuer: /\.[jt]sx$/,
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgo: false,
+          },
+        },
+      ],
+      exclude: /node_modules/,
+    });
+    const fileLoaderRule = config.module.rules.find(rule => rule.test && rule.test.test(".svg"));
+    fileLoaderRule.exclude = /\.inline.svg$/;
 
     return config;
   },

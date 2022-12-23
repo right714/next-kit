@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= type %>/<%= h.changeCase.pascalCase(name) %>/index.stories.tsx
+to: "<%= useStorybook ? `src/components/${type}/${h.changeCase.pascalCase(name)}/index.stories.tsx` : null %>"
 ---
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";

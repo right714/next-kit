@@ -10,12 +10,9 @@
   overflow: hidden;
 }
 
-@mixin modifier($name) {
-  @if meta.type-of($name) != string {
-    @error Use string type for "$name", value is "#{$name}";
-  }
-
-  &.is_#{$name} {
+@mixin hover {
+  &:hover,
+  &:focus {
     @content;
   }
 }

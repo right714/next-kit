@@ -16,16 +16,8 @@
     "incremental": false,
     "baseUrl": "./src",
     "paths": {
-      "@/styles/*": ["styles/*"],
-      "@/pages/*": ["pages/*"],
-      "@/components/*": ["components/*"],
-      "@/layouts/*": ["components/layouts/*"],
-      "@/features/*": ["components/features/*"],
-      "@/ui/*": ["components/ui/*"],
-      "@/hooks/*": ["hooks/*"],
-      "@/stores/*": ["stores/*"],
-      "@/types/*": ["types/*"],
-      "@/utils/*": ["utils/*"]
+      "@/*": ["*"],
+      "@public/*": ["../public/*"]
     },
     "types": ["vitest/importMeta"]
   },

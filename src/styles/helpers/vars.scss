@@ -1,4 +1,5 @@
+// メディアクエリに対して、min-widthで設定される
 $bp: (
-  mobile: 599,
-  tablet: 1023,
+  from_tablet: 600,
+  from_desktop: 1024,
 );

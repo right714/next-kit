@@ -4,13 +4,17 @@ module.exports = {
       {
         type: "input",
         name: "inputPath",
-        message:
-          "パスを入力してください\n  ※末尾に.tsxが追加されてジェネレートされます\n  ※末尾がスラッシュの場合、`index`が追加されます",
+        message: "パスを入力してください（例：about/company）",
+        validate: answer => {
+          if (answer) {
+            return true;
+          }
+        },
       },
       {
         type: "confirm",
         name: "hasMeta",
-        message: "メタセクションを使用しますか",
+        message: "メタセクションを使用しますか？",
       },
     ];
 
