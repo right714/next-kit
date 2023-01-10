@@ -14,7 +14,7 @@ exports.prompt = ({ inquirer }) => {
       type: "select",
       name: "type",
       message: "コンポーネントの種類を選択してください",
-      choices: ["ui", "features", "layouts"],
+      choices: ["atoms", "ui", "features", "layouts"],
     },
     {
       type: "confirm",

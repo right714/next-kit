@@ -1,16 +1,23 @@
 ---
 to: src/components/<%= type %>/<%= h.changeCase.pascalCase(name) %>/index.tsx
 ---
-import { ComponentPropsWithoutRef, FC } from "react";
+<% if (type === "atoms") { %>import { ComponentPropsWithoutRef, FC } from "react";
+<% } else { %>import { FC } from "react";
 
+import { CommonProps } from "@/types/common-props";
+<% } %>
 import styled from "./style.module.scss";
-
-type Props = ComponentPropsWithoutRef<"div">;
-
-export default ((props) => {
-  const { children, className, ...attr } = props;
+<% if (type === "atoms") { %>
+type <%= h.changeCase.pascalCase(name) %>Props = ComponentPropsWithoutRef<"div">;
+<% } else { %>
+type <%= h.changeCase.pascalCase(name) %>Props = CommonProps;
+<% } %>
+const <%= h.changeCase.pascalCase(name) %>: FC<<%= h.changeCase.pascalCase(name) %>Props> = ((props) => {
+  const { children, ...attr } = props;
 
   return (
     <div {...attr}>{children}</div>
   );
-}) as FC<Props>;
+});
+
+export default <%= h.changeCase.pascalCase(name) %>;

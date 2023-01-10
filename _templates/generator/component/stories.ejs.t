@@ -8,7 +8,7 @@ import React from "react";
 import <%= h.changeCase.pascalCase(name) %> from "./index";
 
 export default {
-  title: "Components/<%= h.changeCase.pascalCase(name) %>",
+  title: "<%= h.changeCase.pascalCase(type) %>/<%= h.changeCase.pascalCase(name) %>",
   component: <%= h.changeCase.pascalCase(name) %>,
   argTypes: {
     children: { control: "text" },
