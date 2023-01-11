@@ -20,7 +20,7 @@
     "stylelint": "stylelint \"src/**/*.scss\"",
     "stylelint:fix": "npm run stylelint -- --fix",
     "format": "npm run prettier:fix && npm run stylelint:fix",
-    "code-fix": "npm run lint:fix && npm run format",
+    "code-fix": " tsc --noEmit && npm run lint:fix && npm run format",
     "new:page": "hygen generator page",
     "new:component": "hygen generator component",
     "npm:outdated": "ncu",

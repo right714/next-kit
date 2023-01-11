@@ -1,0 +1,11 @@
+@use "sass:meta";
+
+@mixin line-clamp($rows) {
+  @if meta.type-of($rows) != number {
+    @error Use number type for "$rows", value is "#{$rows}";
+  }
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

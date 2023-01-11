@@ -1,32 +1,4 @@
-@use "sass:meta";
-
-@mixin line-clamp($rows) {
-  @if meta.type-of($rows) != number {
-    @error Use number type for "$rows", value is "#{$rows}";
-  }
-  display: -webkit-box;
-  -webkit-line-clamp: $rows;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-@mixin hover {
-  &:hover,
-  &:focus {
-    @content;
-  }
-}
-
-@mixin hide-scrollbar {
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@mixin transition($tfunc: ease, $duration: 300ms, $props...) {
-  transition-timing-function: $tfunc;
-  transition-duration: $duration;
-  transition-property: $props;
-}
+@forward "mixins/line-clamp";
+@forward "mixins/hover";
+@forward "mixins/hide-scrollbar";
+@forward "mixins/transition";

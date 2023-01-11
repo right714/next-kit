@@ -1,0 +1,5 @@
+@mixin transition($tfunc: ease, $duration: 300ms, $props...) {
+  transition-timing-function: $tfunc;
+  transition-duration: $duration;
+  transition-property: $props;
+}
