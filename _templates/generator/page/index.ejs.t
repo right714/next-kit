@@ -9,8 +9,7 @@ import { NextSeo } from "next-seo";
 export default (() => {
   return (
     <>
-      <% if (hasMeta) { -%><NextSeo />
-<% } -%>
+<% if (hasMeta) { -%>      <NextSeo /><% } -%>
     </>
   );
 }) as NextPage<NextPageContext>;

@@ -10,10 +10,11 @@ Next.js のプロジェクトを始めるときに使うボイラープレート
 - [Jotai](https://jotai.org/)
 - [classnames](https://www.npmjs.com/package/classnames)
   - CSS Modules を使用するため
-- [tailwindcss](https://tailwindcss.com/)
-  - [Cheatsheet](https://tailwindcomponents.com/cheatsheet/)
 - [Next-SEO](https://github.com/garmeeh/next-seo)
 - [Vitest](https://vitest.dev/)
+- [ChakraUI](https://chakra-ui.com/)
+  - [Emotion](https://emotion.sh/docs/introduction)
+  - [Framer motion](https://www.framer.com/docs/introduction/)
 
 ### その他
 
@@ -25,8 +26,38 @@ Next.js のプロジェクトを始めるときに使うボイラープレート
 
 ## CSS に関して
 
-CSS Modules + tailwindcss<br />
-CSS Modules を基本として、tailwindcss はサブ（ひとまずどちらも使えるように対応している状態）
+- CSS Modules を使用
+
+## Chakra UI
+
+- 基本 Layout コンポーネントを使用するために使う（`Stack`や`Grid`など）
+
+### Chakra UI のレスポンシブについて
+
+コンポーネントの Props に対してレスポンシブに指定したオブジェクトを渡す
+
+```jsx
+<Stack direction="column" spacing={{ base: "20px", tablet: "40px" }}></Stack>
+```
+
+全体に適用される`base` + `tablet`や`desktop`でレスポンシブ化する
+
+以下のブレイクポイントを拡張してある
+
+```typescript
+const breakpoints = {
+  tablet: "600px",
+  desktop: "1024px",
+};
+```
+
+## Emotion
+
+通常のコンポーネント作成時にも JS 側でスタイルの調整を行いたい場合が出てくる
+
+その場合は、Emotion を使用する
+
+Emotion のレスポンシブ化は`src/utils/style/media-query.ts`を使用する
 
 ### メディアクエリ
 
@@ -34,23 +65,26 @@ CSS Modules を基本として、tailwindcss はサブ（ひとまずどちら�
 
 ## npm script
 
-| コマンド         | 内容                                   |
-| ---------------- | -------------------------------------- |
-| `dev`            | Next.js                                |
-| `build`          | ビルド＋エクスポート                   |
-| `start`          | サーバーを起動                         |
-| `lint`           | リント＋ Typescript チェック           |
-| `test`           | Vitest 実行                            |
-| `test:run`       | No-watch で Vitest                     |
-| `test:update`    | テストファイルをアップデート           |
-| `test:ui`        | UI 環境で Vitest                       |
-| `prettier`       | Prettier                               |
-| `prettier:check` | Prettier（チェックのみ／husky 用）     |
-| `prettier:fix`   | Prettier（write 付き）                 |
-| `stylelint`      | Stylelint                              |
-| `stylelint:fix`  | Stylelint（fix 付き）                  |
-| `new:page`       | 新しいページをジェネレート             |
-| `new:ui`         | 新しい UI コンポーネントをジェネレート |
-| `new:feature`    | 新しい機能コンポーネントをジェネレート |
-| `npm:outdated`   | node package のアップデートチェック    |
-| `npm:update`     | node package のアップデート            |
+| コマンド         | 内容                                |
+| ---------------- | ----------------------------------- |
+| `dev`            | Next.js 開発サーバーを起動          |
+| `build`          | ビルド＋エクスポート                |
+| `start`          | サーバーを起動                      |
+| `lint`           | リント＋ Typescript チェック        |
+| `test`           | Vitest 実行                         |
+| `test:run`       | No-watch で Vitest                  |
+| `test:update`    | テストファイルをアップデート        |
+| `test:ui`        | UI 環境で Vitest                    |
+| `prettier`       | Prettier                            |
+| `prettier:check` | Prettier（チェックのみ／husky 用）  |
+| `prettier:fix`   | Prettier（write 付き）              |
+| `stylelint`      | Stylelint                           |
+| `stylelint:fix`  | Stylelint（fix 付き）               |
+| `new:page`       | 新しいページをジェネレート          |
+| `new:component`  | 新しいコンポーネントをジェネレート  |
+| `npm:outdated`   | node package のアップデートチェック |
+| `npm:update`     | node package のアップデート         |
+
+## テスト
+
+Vitest 導入の場合、`.husky/pre-push`の`npm run test:run`のコメントアウトを外すこと

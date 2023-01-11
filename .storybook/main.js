@@ -1,5 +1,4 @@
 const { resolve } = require("path");
-const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 
 module.exports = {
   stories: ["../src/components/**/*.stories.mdx", "../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -10,8 +9,6 @@ module.exports = {
   },
   staticDirs: ["../public"],
   webpackFinal: config => {
-    config.plugins.push(new WindiCSSWebpackPlugin());
-
     config.module.rules.push({
       test: /\.scss$/,
       use: [
@@ -32,7 +29,6 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": resolve(__dirname, "../src"),
-      "@public": resolve(__dirname, "../public"),
     };
 
     config.module.rules.push({

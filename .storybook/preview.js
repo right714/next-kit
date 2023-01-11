@@ -1,5 +1,4 @@
 import "@/styles/custom-props.scss";
-import "windi.css";
 import { withScreenshot } from "storycap";
 
 export const decorators = [withScreenshot];

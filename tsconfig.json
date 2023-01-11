@@ -16,8 +16,7 @@
     "incremental": false,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"],
-      "@public/*": ["../public/*"]
+      "@/*": ["*"]
     },
     "types": ["vitest/importMeta"]
   },
