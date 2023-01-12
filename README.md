@@ -15,6 +15,10 @@ Next.js のプロジェクトを始めるときに使うボイラープレート
 - [ChakraUI](https://chakra-ui.com/)
   - [Emotion](https://emotion.sh/docs/introduction)
   - [Framer motion](https://www.framer.com/docs/introduction/)
+- React Use
+  - カスタムフック系ライブラリ
+    - [参考](https://qiita.com/st_12/items/c4e4c1237e97c1b6a657)
+    - [デモ](https://streamich.github.io/react-use/?path=/story/components-usekey--demo)
 
 ### その他
 
